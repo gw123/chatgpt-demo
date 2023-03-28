@@ -1,6 +1,7 @@
 FROM node:alpine
 WORKDIR /usr/src
 RUN npm install -g pnpm
+RUN pnpm config set registry https://registry.npm.taobao.org
 COPY package.json pnpm-lock.yaml ./
 RUN pnpm install
 COPY . .
